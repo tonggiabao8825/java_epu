@@ -302,18 +302,21 @@ public class home extends javax.swing.JFrame {
         // TODO add your handling code here:
         jButton4.setForeground(Color.red);
         jButton4.setBackground(new Color(255,255,255));
+        new StudentFees().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         jButton5.setForeground(Color.red);
         jButton5.setBackground(new Color(255,255,255));
+        new AllStudentsLiving().setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         jButton6.setForeground(Color.red);
         jButton6.setBackground(new Color(255,255,255));
+        new LeavedStudents().setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed

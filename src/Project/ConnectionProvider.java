@@ -1,25 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Project;
-import java.sql.*;
+import java.sql.Connection;
 import java.sql.DriverManager;
-/**
- *
- * @author nguyenbanhan
- */
+import java.sql.SQLException;
+
 public class ConnectionProvider {
-    public static Connection getCon()
-    {
-        try 
-        {
-          
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/hostel","root","MySql@808205");
+    public static Connection getCon() {
+        try {
+            // Nạp driver MySQL
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Kết nối MySQL
+            Connection con = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/hostel", // tên CSDL
+                "root",                               // user
+                "123456"                              // mật khẩu
+            );
+
             return con;
-        } catch (SQLException e) 
-        {
-            System.out.println("Err"+ e.getMessage());
+        } catch (ClassNotFoundException e) {
+            System.out.println("⚠️ Lỗi: Không tìm thấy driver MySQL JDBC!");
+            e.printStackTrace();
+            return null;
+        } catch (SQLException e) {
+            System.out.println("⚠️ Lỗi kết nối CSDL: " + e.getMessage());
             return null;
         }
     }

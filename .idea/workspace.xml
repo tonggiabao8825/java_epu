@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73bbf502-3574-4917-ac59-5c1b12a7cb32" name="Changes" comment="" />
+    <list default="true" id="73bbf502-3574-4917-ac59-5c1b12a7cb32" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/build/classes/Project/ConnectionProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Project/ConnectionProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/home.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/home.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/home.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/home.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/login$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/login$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/login$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/login$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/login$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/login$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/login.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/login.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/login.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Project/ConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project/ConnectionProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StudentFees.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/StudentFees.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StudentFees.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StudentFees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/home.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="34SyvtxO1S8USahyjDkX1OzWCBl" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -18,10 +40,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "/Users/nguyenbanhan/Documents/Hostel Management System"
   }
 }]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="73bbf502-3574-4917-ac59-5c1b12a7cb32" name="Changes" comment="" />

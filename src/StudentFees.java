@@ -18,6 +18,7 @@ public class StudentFees extends javax.swing.JFrame {
 	private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(StudentFees.class.getName());
 	public void clear()
 	{
+                jButton3.setVisible(true);
 		jTextField1.setEditable(true);
 		jTextField1.setText("");
 		jTextField2.setText("");
@@ -210,76 +211,101 @@ public class StudentFees extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         String mobileNo = jTextField1.getText();
-		String month = jTextField5.getText();
-		String amount = jTextField6.getText();
-	try
-{
-	Connection con = ConnectionProvider.getCon();
-	PreparedStatement ps = con.prepareStatement("insert into fees values(?,?,?)");
-	ps.setString(1, mobileNo);
-	ps.setString(2, month);
-	ps.setString(3, amount);
-	ps.executeUpdate();
-	tableDetails();
-	JOptionPane.showMessageDialog(null, "Successfully Updated");
-	clear();
-}
-	catch (Exception e)
-{
-	JOptionPane.showMessageDialog(null, e);
-}
+    String name = jTextField2.getText();
+    String email = jTextField3.getText();
+    String roomNo = jTextField4.getText();
+    String month = jTextField5.getText();
+    String amount = jTextField6.getText();
+
+    try {
+        Connection con = ConnectionProvider.getCon();
+
+        // ✅ 1. Kiểm tra sinh viên đã tồn tại chưa
+        PreparedStatement checkStudent = con.prepareStatement(
+            "SELECT * FROM student WHERE mobileNo = ?"
+        );
+        checkStudent.setString(1, mobileNo);
+        ResultSet rs = checkStudent.executeQuery();
+
+        if (!rs.next()) {
+            // ✅ 2. Nếu chưa có thì thêm sinh viên mới
+            PreparedStatement ps1 = con.prepareStatement(
+                "INSERT INTO student (mobileNo, name, email, roomNo) VALUES (?, ?, ?, ?)"
+            );
+            ps1.setString(1, mobileNo);
+            ps1.setString(2, name);
+            ps1.setString(3, email);
+            ps1.setString(4, roomNo);
+            ps1.executeUpdate();
+        }
+
+        // ✅ 3. Thêm học phí (fees)
+        PreparedStatement ps2 = con.prepareStatement(
+            "INSERT INTO fees (mobileNo, month, amount) VALUES (?, ?, ?)"
+        );
+        ps2.setString(1, mobileNo);
+        ps2.setString(2, month);
+        ps2.setString(3, amount);
+        ps2.executeUpdate();
+
+        JOptionPane.showMessageDialog(null, "💾 Dữ liệu đã được lưu thành công!");
+         tableDetails();
+
+        jTextField5.setText(""); 
+
+        jTextField6.setText("");
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, e);
+    }
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        String mobileNo = jTextField1.getText();
-		SimpleDateFormat dFormat = new SimpleDateFormat("MMM-yyyy");
-		Date date = new Date();
-		String month=dFormat.format(date);
-		try
-		{
-			Connection con=ConnectionProvider.getCon();
-			// Sửa lỗi TYPE_FORWARD_ONLY: Cho phép ResultSet di chuyển lùi/ngẫu nhiên
-			Statement st=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY); 
-			ResultSet rs = st.executeQuery(
-	"select * from student where mobileNo='" + mobileNo + "' and status='living'"
-);
-			if(rs.first()) // rs.first() giờ đã hoạt động
-			{
-				jTextField1.setEditable(false);
-				jTextField2.setText(rs.getString(2));
-				jTextField3.setText(rs.getString(5));
-				jTextField4.setText(rs.getString(9));
-				jTextField5.setText(month);
-				jTextField6.setText("6000");
-			}
-			else
-			{
-				JOptionPane.showMessageDialog(null, "Học sinh không tồn tại");
-				clear();
-			}
-			tableDetails();
-			
-			// Sử dụng lại Statement đã được cấu hình cho ResultSet có thể cuộn
-			ResultSet rsl = st.executeQuery(
-	"SELECT * FROM fees "
-	+ "INNER JOIN student ON fees.mobileNo = student.mobileNo "
-	+ "WHERE student.status = 'living' "
-	+ "AND fees.month = '" + month + "' "
-	+ "AND fees.mobileNo = '" + mobileNo + "'"
-	// Đã loại bỏ điều kiện AND student.mobileNo = '" + mobileNo + "' thừa thãi
-);
-			if(rsl.first()) // rsl.first() giờ đã hoạt động
-			{
-				jButton3.setVisible(false);
-				JOptionPane.showMessageDialog(null, "Sinh vien đã thanh toán học phí cho tháng này");
-			}
-		}
-		catch(Exception e)
-		{
-			JOptionPane.showMessageDialog(null,e);
-		}
+       String mobileNo = jTextField1.getText();
+    try {
+        Connection con = ConnectionProvider.getCon();
+
+        // Lấy thông tin sinh viên
+        PreparedStatement ps1 = con.prepareStatement(
+            "SELECT * FROM student WHERE mobileNo = ?"
+        );
+        ps1.setString(1, mobileNo);
+        ResultSet rs1 = ps1.executeQuery();
+
+        if (rs1.next()) {
+            jTextField2.setText(rs1.getString("name"));
+            jTextField3.setText(rs1.getString("email"));
+            jTextField4.setText(rs1.getString("roomNo"));
+        } else {
+            JOptionPane.showMessageDialog(null, "❌ Không tìm thấy sinh viên này!");
+            return;
+        }
+
+        // Lấy thông tin học phí
+        PreparedStatement ps2 = con.prepareStatement(
+            "SELECT * FROM fees WHERE mobileNo = ?"
+        );
+        ps2.setString(1, mobileNo);
+        ResultSet rs2 = ps2.executeQuery();
+
+        if (rs2.next()) {
+            jTextField5.setText(rs2.getString("month"));
+            jTextField6.setText(rs2.getString("amount"));
+        } else {
+            jTextField5.setText("");
+            jTextField6.setText("");
+        }
+
+        JOptionPane.showMessageDialog(null, "✅ Tìm thấy dữ liệu!");
+        tableDetails();
+
+        jTextField5.setText(""); 
+
+        jTextField6.setText("");
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, e);
+    }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
