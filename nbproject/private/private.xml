@@ -3,13 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/LOQ/doan_java/src/StudentFees.java</file>
-            <file>file:/C:/Users/LOQ/doan_java/src/home.java</file>
-            <file>file:/C:/Users/LOQ/doan_java/src/login.java</file>
-            <file>file:/C:/Users/LOQ/doan_java/src/UpdateDeleteStudent.java</file>
-            <file>file:/C:/Users/LOQ/doan_java/src/Project/ConnectionProvider.java</file>
-            <file>file:/C:/Users/LOQ/doan_java/src/AllStudentsLiving.java</file>
-            <file>file:/C:/Users/LOQ/doan_java/src/LeavedStudents.java</file>
+            <file>file:/E:/NetBeansProjects/huy_java/src/UpdateDeleteEmployee.java</file>
+            <file>file:/E:/NetBeansProjects/huy_java/src/AllEmployeeWorking.java</file>
+            <file>file:/E:/NetBeansProjects/huy_java/src/home.java</file>
+            <file>file:/E:/NetBeansProjects/huy_java/src/LeavedEmployee.java</file>
         </group>
     </open-files>
 </project-private>
