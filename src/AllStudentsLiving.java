@@ -73,12 +73,12 @@ catch(Exception e)
                 {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Mobile Number", "Father Name", "Mother Name", "Email", "Address", "College Name", "Aadhaar Number", "Room Number"
+                "Name", "Mobile Number", "Father Name", "Mother Name", "Email", "Address", "College Name", "CCCD", "Room Number"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 55, 644, 420));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 644, 420));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pages background.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");

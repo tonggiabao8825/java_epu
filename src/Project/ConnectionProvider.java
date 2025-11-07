@@ -13,7 +13,7 @@ public class ConnectionProvider {
             Connection con = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/hostel", // tên CSDL
                 "root",                               // user
-                "123456"                              // mật khẩu
+                "MySql@808205"                              // mật khẩu
             );
 
             return con;
@@ -27,3 +27,4 @@ public class ConnectionProvider {
         }
     }
 }
+
